@@ -23,6 +23,10 @@ module.exports = {
             loader: "style-loader!css-loader"
         },
         {
+            test: /\.scss$/,
+            loader: 'style-loader!css-loader!sass-loader'
+        },
+        {
           test: /\.(eot|svg|ttf|woff|woff2)(\?.+)?$/,
           loader : 'file-loader'
         },

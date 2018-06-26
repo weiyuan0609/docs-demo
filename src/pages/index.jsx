@@ -1,3 +1,4 @@
 export default {
-  'button': require('./button') 
+  'button': require('./button'),
+  'test': require('./test')
 }

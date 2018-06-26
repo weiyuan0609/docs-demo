@@ -31,9 +31,7 @@ export default class Canvas extends React.Component {
   }
 
   renderSource(value) {
-    console.log('fdgfdg', value);
-    import('../util/sourse').then(Element => {
-      console.log(Element, 'hhhh');
+    import('../util/source').then(Element => {
       const args = ['context', 'React', 'ReactDOM']
       const argv = [this, React, ReactDOM]
 
@@ -47,7 +45,6 @@ export default class Canvas extends React.Component {
         argv
       }
     }).then(({ args, argv }) => {
-      console.log('pp', args, argv, value);
       const code = transform(`
         class Demo extends React.Component {
           ${value}
@@ -57,8 +54,6 @@ export default class Canvas extends React.Component {
       `, {
         presets: ['es2015', 'react']
       }).code
-
-      // console.log('ioioio', code);
 
       args.push(code)
 
@@ -73,7 +68,6 @@ export default class Canvas extends React.Component {
   }
 
   render() {
-    console.log('kkk', this.description, this.source);
     return (
       <div>
         <div className="source" id={this.playerId} />
@@ -96,6 +90,19 @@ export default class Canvas extends React.Component {
             </div>
           )
         }
+         <div className="demo-block-control" onClick={this.blockControl.bind(this)}>
+          {
+            this.state.showBlock ? (
+              <span>
+                影藏
+              </span>
+            ) : (
+              <span>
+                显示
+              </span>
+            )
+          }
+        </div>
       </div>
     )
   }

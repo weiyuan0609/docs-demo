@@ -1,0 +1,17 @@
+.el-button {
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #c4c4c4;
+    color: #1f2d3d;
+    margin: 0;
+    padding: 10px 15px;
+    border-radius: 4px;
+    &:hover {
+        background: #f9c855 !important;
+        border-color: #f9c855;
+        color: #fff;
+    }
+}
