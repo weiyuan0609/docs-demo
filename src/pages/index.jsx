@@ -1,4 +1,5 @@
 export default {
   'button': require('./button'),
-  'test': require('./test')
+  'test': require('./test'),
+  'color': require('./color')
 }

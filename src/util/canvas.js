@@ -45,7 +45,8 @@ export default class Canvas extends React.Component {
         argv
       }
     }).then(({ args, argv }) => {
-      const code = transform(`
+      console.log('oo', value.includes('render()'));
+      const code = value.includes('render()') ? transform(`
         class Demo extends React.Component {
           ${value}
         }
@@ -54,6 +55,22 @@ export default class Canvas extends React.Component {
       `, {
         presets: ['es2015', 'react']
       }).code
+      : transform(`
+        class Demo extends React.Component {
+          render() {
+            return (
+              <div>
+                ${value}
+              </div>
+            )
+          }
+        }
+
+        ReactDOM.render(<Demo {...context.props} />, document.getElementById('${this.playerId}'))
+      `, {
+        presets: ['es2015', 'react']
+      }).code
+
 
       args.push(code)
 
