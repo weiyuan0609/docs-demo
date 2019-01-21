@@ -21,7 +21,7 @@ class App extends React.Component {
 
   getPage() {
     const routes = location.hash.match(/(?:\/(.+))?\/(.+)/);
-    return routes[2];
+    return routes ? routes[2] : 'button';
   }
 
   setPage(fn) {
