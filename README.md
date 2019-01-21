@@ -26,5 +26,7 @@ src\
 
 app.js                  // 入口
 
+```
+
 ### 效果
 ![demo](src/img/demo.png)
