@@ -1,0 +1,132 @@
+.el-button {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #c4c4c4;
+  color: #1f2d3d;
+  margin: 0;
+  padding: 10px 15px;
+  border-radius: 4px;
+  &:hover {
+    background: #f9c855 !important;
+    border-color: #f9c855;
+    color: #fff;
+  }
+}
+
+.el-button--success {
+  color: blue !important;
+}
+
+.header {
+  height: 40px;
+  line-height: 40px;
+  font-weight: bold;
+  padding-left: 40px;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.container {
+  display: inline-flex;
+}
+
+.menu {
+  width: 200px;
+  margin-right: 20px;
+}
+
+.active {
+  background-color: #eb3136;
+}
+
+.menu li.active a {
+  color: #fff;
+}
+
+.menu ul {
+  padding: 0;
+  text-align: center;
+}
+
+.menu li {
+  list-style-type:none;
+  height: 40px;
+  line-height: 40px;
+}
+
+.page {
+  flex: 1;
+}
+
+.menu li a {
+  color: #333;
+  font-weight: bold;
+}
+
+.menu li a, .menu li a:link, .menu li a:visited {
+  text-decoration:none;
+} 
+
+.btnCur {
+  cursor: pointer;
+}
+
+.main-panel {
+  margin-top: 15px;
+  border: solid 2px #eaeefb;
+  border-radius: 4px;
+  .main-panel-source {
+    position: relative;
+    padding: 24px;
+  }
+  .main-panel-description {
+    border-top: solid 1px #eaeefb;
+    min-height: 36px;
+    line-height: 16px;
+    padding-left: 10px;
+    word-wrap: break-word;
+  }
+  .main-panel-control {
+    border-top: solid 1px #eaeefb;
+    height: 36px;
+    line-height: 36px;
+    color: #20a0ff;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+  }
+}
+
+.page table.grid {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #fff;
+  color: #5e6d82;
+  font-size: 14px;
+  margin-bottom: 45px;
+  line-height: 1.5em;
+
+  strong {
+    font-weight: normal;
+  }
+
+  th {
+    text-align: left;
+    border-top: 1px solid #eaeefb;
+    background-color: #EFF2F7;
+    white-space: nowrap;
+  }
+
+  td, th {
+    border: 1px solid #eaeefb;
+    padding: 10px;
+    max-width: 250px;
+  }
+
+  th:first-child, td:first-child {
+    padding-left: 10px;
+  }
+}
+

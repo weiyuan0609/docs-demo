@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import pages from './pages';
-import './util/styles.scss';
+import './css/styles.scss';
 
 class App extends React.Component {
   constructor(props) {
@@ -21,8 +21,6 @@ class App extends React.Component {
 
   getPage() {
     const routes = location.hash.match(/(?:\/(.+))?\/(.+)/);
-
-    console.log(routes, 'gg');
     return routes[2];
   }
 
@@ -31,11 +29,7 @@ class App extends React.Component {
   }
 
   getComponent(page) {
-    console.log('iii', pages, page);
-    // this.components = this.components || Object.assign(Object.values(pages).reduce((a, b) => {
-    //   return Object.assign(a, b);
-    // }, {}));
-    page = page || 'button'
+    page = page || this.getPage();
     const result = pages[page];
     if (result) {
       return React.createElement(result.default, {});
@@ -45,18 +39,24 @@ class App extends React.Component {
   render() {
     return (
       <div>
-          Hello World testddd
-          <div>
-            {
-              Object.keys(pages).map(page => {
-                return (
-                  <a href={`#/${page}`}  key={page}>{page}</a>
-                )
-              })
-            }
-          </div>
-          <div>
-          { this.getComponent(this.state.page) }
+        <div className="header">markdown可交互文档</div>
+          <div className="container">
+            <div className="menu">
+              <ul>
+                {
+                  Object.keys(pages).map(page => {
+                    return (
+                      <li key={page} className={page === this.getPage() ? 'active' : ''}>
+                        <a href={`#/${page}`}>{page}</a>
+                      </li>
+                    )
+                  })
+                }
+              </ul>
+            </div>
+            <div className="page">
+              { this.getComponent(this.state.page) }
+            </div>
           </div>
       </div>
     )

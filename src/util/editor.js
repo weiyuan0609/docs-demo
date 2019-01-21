@@ -7,6 +7,7 @@ import 'codemirror/keymap/sublime'
 import 'codemirror/addon/comment/comment'
 
 import 'codemirror/lib/codemirror.css'
+import 'codemirror/theme/monokai.css'
 
 export default class Editor extends Component {
   componentDidMount() {
@@ -14,10 +15,10 @@ export default class Editor extends Component {
 
     this.cm = CodeMirror(this.editor, {
       mode: 'jsx',
-      theme: 'react',
+      theme: 'monokai',
       keyMap: 'sublime',
       viewportMargin: Infinity,
-      lineNumbers: false,
+      lineNumbers: true,
       dragDrop: false
     });
 

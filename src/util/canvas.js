@@ -45,7 +45,6 @@ export default class Canvas extends React.Component {
         argv
       }
     }).then(({ args, argv }) => {
-      console.log('oo', value.includes('render()'));
       const code = value.includes('render()') ? transform(`
         class Demo extends React.Component {
           ${value}
@@ -86,8 +85,8 @@ export default class Canvas extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="source" id={this.playerId} />
+      <div className="main-panel">
+        <div className="main-panel-source" id={this.playerId} />
         {
           this.state.showBlock && (
             <div>
@@ -95,7 +94,7 @@ export default class Canvas extends React.Component {
                 this.description && (
                   <div
                     ref="description"
-                    className="description"
+                    className="main-panel-description"
                     dangerouslySetInnerHTML={{ __html: this.description }}
                   />
                 )
@@ -107,14 +106,14 @@ export default class Canvas extends React.Component {
             </div>
           )
         }
-         <div className="demo-block-control" onClick={this.blockControl.bind(this)}>
+         <div className="main-panel-control" onClick={this.blockControl.bind(this)}>
           {
             this.state.showBlock ? (
-              <span>
-                影藏
+              <span className="btnCur">
+                隐藏
               </span>
             ) : (
-              <span>
+              <span className="btnCur">
                 显示
               </span>
             )
